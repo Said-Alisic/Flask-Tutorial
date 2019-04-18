@@ -1,5 +1,5 @@
 # Import Flask module from flask package - creating Flask web server
-from flask import Flask
+from flask import Flask, render_template
 
 # Creating instance of Flask class and naming it app - "__name__" refers to the current file
 app = Flask(__name__)
@@ -7,12 +7,12 @@ app = Flask(__name__)
 
 @app.route("/")     # Represents default page
 def home():         # Function activated after going to default page
-    return "Hello, World!"
+    return render_template("home.html")
 
 
-@app.route("/salvador")
-def salvador():
-    return "Hello, Salvador"
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 # Python assigns the name "__main__" to script when executed
